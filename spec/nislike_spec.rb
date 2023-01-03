@@ -12,5 +12,7 @@ RSpec.describe Nislike do
   it "Doesn't raise error" do
     expect(Nislike.dont_use_nil(11)).to equal(11)
     expect(Nislike.dont_use_nil('abc')).to equal('abc')
+    expect(Nislike.dun(11)).to equal(11)
+    expect(Nislike.dun('abc')).to equal('abc')
   end
 end

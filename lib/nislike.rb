@@ -13,5 +13,6 @@ module Nislike
     raise UsingNilError if value.nil?
     value
   end
-  module_function :dont_use_nil
+  alias_method :dun, :dont_use_nil
+  module_function :dont_use_nil, :dun
 end
