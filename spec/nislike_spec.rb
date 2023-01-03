@@ -6,7 +6,7 @@ RSpec.describe Nislike do
   end
 
   it "raises error" do
-    expect { Nislike.dont_use_nil(nil) }.to raise_error(Nislike::UsingNilError)
+    expect{Nislike.dont_use_nil(nil)}.to raise_error(Nislike::UsingNilError)
   end
 
   it "Doesn't raise error" do
@@ -14,5 +14,23 @@ RSpec.describe Nislike do
     expect(Nislike.dont_use_nil('abc')).to equal('abc')
     expect(Nislike.dun(11)).to equal(11)
     expect(Nislike.dun('abc')).to equal('abc')
+  end
+
+  it "is practical example of using Nislike" do
+    class PracticalExample
+      include Nislike
+      def success
+        dun 11 + 22
+      end
+      private def something_returns_nil
+        # some process
+        nil
+      end
+      def fail
+        dun something_returns_nil
+      end
+    end
+    expect(PracticalExample.new.success).to equal(33)
+    expect{PracticalExample.new.fail}.to raise_error(Nislike::UsingNilError)
   end
 end
