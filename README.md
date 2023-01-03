@@ -12,5 +12,5 @@ That's the motivation of this project.
 
 ## Contribution
 
-If you have any idea, opinion, discussion theme, etc, Please tell me by opening an issue.
+If you have any idea, opinio, etc, Please tell me by opening an issue or create pull request.
 I'd happy to hear your thought.
